@@ -7,9 +7,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-  <link href="https://drive.google.com/uc?export=view&id=15KH11GM_aspgVY4x0EfjbIYdEu4TIlWL" rel="stylesheet"
+  <link href="https://drive.google.com/uc?export=view&id=10eBiG41mzbyWAuqJnRW_6nq5MuQpydFX" rel="stylesheet"
     type="text/css" />
-  <script src="https://tetepaja.htmlku.repl.co/script.js"></script>
+  <script src="https://Jalanjalan.htmlku.repl.co/script.js"></script>
 
   <head>
     <title>Script HTML</title>
@@ -36,15 +36,14 @@
 
   <body>
 
-    <div id="bodyblur">
-      <!-- Wallpaper --><img id="wallpaper" src="https://feeldreams.github.io/wpjalanan.jpg" width="100%"
-        height="100%" />
-      <div id="beneranblur"></div>
+    <div id="bgbelakang">
+      <!-- Wallpaper --><img src="https://feeldreams.github.io/street22.jpeg" />
     </div>
 
     <div id='Content'>
       <!-- Foto Atas -->
-      <div><img id="fotosatu" src="" /><img id="fotodua" src="" /><img id="fototiga" src="" /></div>
+      <div><img id="fotosatu" src="" /><img id="fotodua" src="" /><img id="fototiga" src="" /><img id="fotoempat"
+          src="" /></div>
       <div>
         <blockquote id='bq'>
           <p id="kalimat">...</p>
@@ -52,33 +51,30 @@
         </blockquote>
       </div>
 
-      <!-- Tombol -->
-      <div id="Tombol">
-        <a onClick="sjawab()">
-          <b id="By">Klik ini</b>
-        </a>
-      </div>
+      <!-- Tombol Kirim Pesan -->
+      <div id="contTom"><a id="By" class='button' onClick="sjawab()">Klik Ini</a></div>
     </div>
 
     <!-- Jangan Edit Bagian Ini -->
     <script>
       function showDiv() { setTimeout(setel, 50); pergantian(); setTimeout(kpemb, 100); document.getElementById('Content').style = "opacity:1;margin-top:4vh;animation:kont 5s infinite;"; document.querySelector("body").style.animation = "none 8s ease infinite"; } function kpemb() { bq.style = "opacity:1;visibility:visible;margin-top:5px"; }
-      function loadfoto() { fotosatu.style = "display:inline-flex"; fotosatu.src = gambar1; fotodua.src = gambar2; fototiga.src = gambar3; }
-      function tombol() { Tombol.style = "opacity:1;transform: scale(1);"; ftom = 1; } ftom = 0; function fakhiran() { document.getElementById("akhiran").style = "display:inline-flex"; }
+      function loadfoto() { fotosatu.style = "display:inline-flex"; fotosatu.src = gambar1; fotodua.src = gambar2; fototiga.src = gambar3; fotoempat.src = gambar4; }
+      function tombol() { contTom.style = "opacity:1;transform: scale(1);"; ftom = 1; } ftom = 0; function fakhiran() { document.getElementById("akhiran").style = "display:inline-flex"; }
       const swals = Swal.mixin({ allowOutsideClick: false, cancelButtonColor: '#FF0040', }); const swalsy = Swal.mixin({ confirmButtonText: 'Iya', allowOutsideClick: false, }); const swalst = Swal.mixin({ allowOutsideClick: false, showConfirmButton: false, timer: 1200, timerProgressBar: true, didOpen: () => { Swal.showLoading(); const b = Swal.getHtmlContainer().querySelector('b'); timerInterval = setInterval(() => { Swal.getTimerLeft() }, 100) }, willClose: () => { clearInterval(timerInterval) } }); const style = document.createElement('style'); var today = new Date(); var dd = String(today.getDate()).padStart(2, '0'); var mm = String(today.getMonth() + 1).padStart(2, '0'); var yyyy = today.getFullYear(); const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]; today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
       function otomatis() { befanimkata(); setTimeout(animkata, 200); } function befanimkata() { kalimat.style = "transform:scale(.3);"; } function animkata() { kalimat.style = "transform:scale(1);"; }
       function otomatis2() { befanimkataa(); setTimeout(animkataa, 200); } function befanimkataa() { kalimatc.style = "transform:scale(.3);font-size:14px;margin-top:30px;"; } function animkataa() { kalimatc.style = "transform:scale(1);font-size:14px;margin-top:30px;"; }
       function finalakhir() { ftom = 2; otomatis2(); By.innerHTML = "Kirim Pesan"; kalimatc.innerHTML = "Jawabanmu: " + pesanwhatsapp; } function sjawab() { if (ftom == 1) { kalimatc.innerHTML = ""; otomatis2(); jawab(); } if (ftom == 2) { menuju(); } }
       function setel() { audio.play(); } function setel2() { bgm.play(); }
-      var aa = 0, katangetik; function ngetik() { if (aa < katangetik.length) { kalimat.innerHTML += katangetik.charAt(aa); aa++; setTimeout(ngetik, 40); } }
+      var aa = 0, katangetik; function ngetik() { if (aa < katangetik.length) { kalimat.innerHTML += katangetik.charAt(aa); aa++; setTimeout(ngetik, 30); } }
       function bawahlagi() { setTimeout(tombol, 1000); kalimatc.style = "margin-top:30px;"; kalimatc.innerHTML = emot; }
 
-      function pergantian() { setTimeout(gantikata, 300); setTimeout(gantikata, 2000); setTimeout(gantikata, 3200); }
+      function pergantian() { setTimeout(gantikata, 4000); setTimeout(gantikata, 6000); setTimeout(gantikata, 7500); setTimeout(gantikata, 9000); }
       function tfkata() { fkata += 1; } function bersihkan() { kalimat.innerHTML = ""; }
       fkata = 1; function gantikata() {
         if (fkata == 1) { otomatis(); kalimat.innerHTML = kata1; }
         if (fkata == 2) { otomatis(); kalimat.innerHTML = kata2; fotosatu.style = "display:none"; fotodua.style = "display:inline-flex;" }
-        if (fkata == 3) { kalimat.innerHTML = ""; setTimeout(ngetik, 50); setTimeout(bawahlagi, 1500); bodyblur.style = "opacity:.4;animation:none"; beneranblur.style = "-webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px)"; wallpaper.style = "transform: scale(1.6)"; fotodua.style = "display:none"; fototiga.style = "display:inline-flex;" }
+        if (fkata == 3) { otomatis(); kalimat.innerHTML = kata3; fotodua.style = "display:none"; fototiga.style = "display:inline-flex;" }
+        if (fkata == 4) { kalimat.innerHTML = ""; setTimeout(ngetik, 50); setTimeout(bawahlagi, 1500); fototiga.style = "display:none"; fotoempat.style = "display:inline-flex"; }
         setTimeout(tfkata, 300);
       }
     </script> <!-- Sampai Sini -->
@@ -106,17 +102,20 @@
       }
 
       async function pertama() {
-        audio = new Audio('https://feeldreams.github.io/tetepaja.mp3');
+        audio = new Audio('https://feeldreams.github.io/jalanjalan.mp3');
 
-        gambar1 = "https://feeldreams.github.io/bunga.gif";
-        gambar2 = "https://feeldreams.github.io/ledekin.gif";
-        gambar3 = "https://feeldreams.github.io/smprt.gif";
+        gambar1 = "https://feeldreams.github.io/gigitin.gif";
+        gambar2 = "https://feeldreams.github.io/mndkat.gif";
+        gambar3 = "https://feeldreams.github.io/pusn.gif";
+        gambar4 = "https://feeldreams.github.io/bunga.gif";
 
-        kata1 = "Banyak Sih Yang Menarik,";
-        kata2 = "Tapi Tetep Aja";
-        katangetik = "Kamu yang Paling Cantik 👉👈";
+        kata1 = "Jalan-Jalan Lewat Lorong,";
+        kata2 = "Pulangnya Ketemu Angga";
+        kata3 = "Wallpaperku Kosong,";
+        katangetik = "Boleh Minta Papnya Gak? 👉👈";
 
-        emot = "Hehehe love you kila❤️😍😘";
+
+        emot = "🤣🙏🏻😘❤️💕";
 
         loadfoto(); await swalst.fire('Tunggu'); await swals.fire('Selamat datang!', 'Sekarang lihat ini ya :)'); setTimeout(showDiv, 300);
       } pertama();
